@@ -10,12 +10,12 @@ const resolvers = {
   },
   Mutation: {
     createUser: (_, { username, email }) => User.create({ username, email }),
-    createPost: (_, { content, userId }) => Post.create({ content, author: userId }),
+    createPost: (_, { content, userId }) => Post.create({ content, author: userId })
     
   },
   
   User: {
-    posts: (user) => Post.find({ author: user.id }),
+    posts: (user) => Post.find({ author: user.id })
   },
   Post: {
     author: (post) => User.findById(post.author),
